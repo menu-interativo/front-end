@@ -9,16 +9,20 @@ interface SideBarMenuProps {
 }
 
 const SideBarMenu = ({ selectedCategory, onSelectCategory }: SideBarMenuProps) => {
+	const categories = Object.values(Category);
+
 	return (
 		<View style={styles.sidebarContainer}>
-			{Object.values(Category).map((category, index) => (
-				<TouchableOpacity
-					key={index}
-					style={ selectedCategory === category ? styles.menuItemDark : styles.menuItemLight}
-					onPress={() => onSelectCategory(category)}
-				>
-					<Text style={styles.menuText}>{t(category.valueOf())}</Text>
-				</TouchableOpacity>
+			{categories.map((category, index) => (
+				index < categories.length - 1 && ( // Ignora o último item
+					<TouchableOpacity
+						key={index}
+						style={selectedCategory === category ? styles.menuItemDark : styles.menuItemLight}
+						onPress={() => onSelectCategory(category)}
+					>
+						<Text style={styles.menuText}>{t(category.valueOf())}</Text>
+					</TouchableOpacity>
+				)
 			))}
 			<TouchableOpacity style={styles.finalizeButton}>
 				<Text style={styles.finalizeText}>FINALIZAR ATENDIMENTO</Text>
@@ -26,6 +30,7 @@ const SideBarMenu = ({ selectedCategory, onSelectCategory }: SideBarMenuProps) =
 		</View>
 	);
 };
+
 
 const styles = StyleSheet.create({
 	sidebarContainer: {
