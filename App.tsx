@@ -24,8 +24,12 @@ import TelaGarcomInicial from "./src/screens/celular/telaPrincipal.celular";
 import TelaGarcom from "./src/screens/celular/telaGarcom.celular";
 import TelaHistorico from "./src/screens/celular/telaHistorico.celular";
 import TelaAtivasCozinha from "./src/screens/cozinha/telaAtivas.cozinha";
-import TelaHistoricoCozinha from "./src/screens/cozinha/telaHistorico.cozinha";
 import LoginScreen from "./src/screens/Login";
+import TelaHistoricoCozinha from "./src/screens/cozinha/telaHistorico.cozinha";
+import TwoColumnLayout from "./src/screens/adm/telaPrincipal.adm";
+import TelaGarcomGerente from "./src/screens/adm/telaGar.adm";
+
+
 
 const Stack = createStackNavigator();
 
@@ -63,6 +67,10 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 			title="Cozinha "
 			onPress={() => navigation.navigate("TelaPagamento")}
 		/>
+		<Button
+		title="adm "
+		onPress={() => navigation.navigate("TwoColumnLayout")}
+	/>
 	</View>
 );
 }
@@ -163,6 +171,20 @@ export default function App() {
 					options={{
 						headerShown: false,
 						...TransitionPresets.SlideFromRightIOS,
+					}}
+				/>
+				<Stack.Screen
+					name="TwoColumnLayout"
+					component={TwoColumnLayout}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="TelaGarcomGerente"
+					component={TelaGarcomGerente}
+					options={{
+						headerShown: false,
 					}}
 				/>
 			</Stack.Navigator>
