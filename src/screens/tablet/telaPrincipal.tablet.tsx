@@ -5,7 +5,6 @@ import { StatusBar } from "expo-status-bar";
 import {
 	View,
 	ScrollView,
-	Dimensions,
 	Image,
 	TouchableOpacity,
 } from "react-native";
@@ -19,7 +18,6 @@ import SideBarMenu from "../../components/sidebarMenu";
 import { Dish, useDishesByCategory } from "../../hooks/useDishesByCategory";
 import DishDetails from "../../components/DishDetails";
 
-const screenWidth = Dimensions.get("window").width;
 
 const TelaPrincipal = () => {
 	const [dish, setDish] = useState<Dish | null>(null);
@@ -44,8 +42,8 @@ const TelaPrincipal = () => {
 	};
 
 	const handlePressComanda = () => {
-		console.log("Botão Comanda pressionado");
-	};
+	navigation.navigate("TelaComanda");
+};
 
 	const handlePressConfig = () => {
 		console.log("Botão Config pressionado");

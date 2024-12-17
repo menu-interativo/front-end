@@ -1,10 +1,8 @@
 import React from "react";
 import {
 	StyleSheet,
-	Text,
 	View,
 	Button,
-	TouchableOpacity,
 	StatusBar,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
