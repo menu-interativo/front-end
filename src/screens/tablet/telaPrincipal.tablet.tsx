@@ -45,9 +45,6 @@ const TelaPrincipal = () => {
 	navigation.navigate("TelaComanda");
 };
 
-	const handlePressConfig = () => {
-		console.log("Botão Config pressionado");
-	};
 
 	const handlePressDish = (dish: Dish) => {
 		setDish(dish);
@@ -88,11 +85,6 @@ const TelaPrincipal = () => {
 										style={styles.icon}
 									/>
 									<Badge style={styles.comandaBadge}>2</Badge>
-								</View>
-							</TouchableOpacity>
-							<TouchableOpacity style={styles.iconColumn} onPress={handlePressConfig}>
-								<View style={styles.iconWrapper}>
-									<Image source={require("../../assets/images/config.png")} style={styles.icon} />
 								</View>
 							</TouchableOpacity>
 						</View>
