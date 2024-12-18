@@ -52,18 +52,13 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 			title="Tela cliente Inicial "
 			onPress={() => navigation.navigate("TelaClienteInicial")}
 		/>
-		<Button title="Login " onPress={() => navigation.navigate("LoginScreen")} />
 		<Button
-			title="Cozinha "
+			title="Comanda "
 			onPress={() => navigation.navigate("TelaAtivasCozinha")}
 		/>
 		<Button
-			title="Cozinha "
-			onPress={() => navigation.navigate("TelaComanda")}
-		/>
-		<Button
-			title="Cozinha "
-			onPress={() => navigation.navigate("TelaPagamento")}
+			title="Garçom "
+			onPress={() => navigation.navigate("TelaGarcom")}
 		/>
 		<Button
 		title="adm "
